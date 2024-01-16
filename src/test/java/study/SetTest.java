@@ -55,13 +55,4 @@ public class SetTest {
         String actualValue = input.toLowerCase();
         assertEquals(expected, actualValue);
     }
-
-    @Test
-    void calculateString() {
-        Scanner kb = new Scanner(in);
-        String value = kb.nextLine();
-        String[] values = value.split("");
-
-    }
-
 }
