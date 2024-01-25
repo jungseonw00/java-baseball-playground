@@ -1,19 +1,16 @@
 package baseball;
 
-import java.util.Objects;
-
 public class Ball {
 
     private final int position;
-    private final int ballNo;
+    private final BallNumber ballNo;
 
     public Ball(int position, int ballNo) {
         this.position = position;
-        this.ballNo = ballNo;
+        this.ballNo = new BallNumber(ballNo);
     }
 
     public BallStatus play(Ball ball) {
-//        if (position == ball.position && ball.matchBallNo(ballNo))
         if (this.equals(ball)) {
             return BallStatus.STRIKE;
         }
@@ -21,10 +18,11 @@ public class Ball {
         if (ball.matchBallNo(ballNo)) {
             return BallStatus.BALL;
         }
+
         return BallStatus.NOTHING;
     }
 
-    private boolean matchBallNo(int ballNo) {
+    private boolean matchBallNo(BallNumber ballNo) {
         return this.ballNo == ballNo;
     }
 

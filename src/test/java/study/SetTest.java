@@ -1,22 +1,17 @@
 package study;
 
-import org.assertj.core.internal.Strings;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.platform.commons.util.StringUtils;
-
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-
-import static java.lang.System.in;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.internal.Strings.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SetTest {
 
@@ -54,13 +49,5 @@ public class SetTest {
     void toLowerCase_ShouldGenerateTheExpectedLowercaseValue(String input, String expected) {
         String actualValue = input.toLowerCase();
         assertEquals(expected, actualValue);
-    }
-
-    @Test
-    void calculateString() {
-        Scanner kb = new Scanner(in);
-        String value = kb.nextLine();
-        String[] values = value.split("");
-
     }
 }

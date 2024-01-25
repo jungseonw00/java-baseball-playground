@@ -21,14 +21,14 @@ public class BallTest {
     }
 
     @Test
-    void nothing() {
-        BallStatus status = com.play(new Ball(2, 5));
-        assertThat(status).isEqualTo(BallStatus.NOTHING);
-    }
-
-    @Test
     void ball() {
         BallStatus status = com.play(new Ball(2, 4));
         assertThat(status).isEqualTo(BallStatus.BALL);
+    }
+
+    @Test
+    void nothing() {
+        BallStatus status = com.play(new Ball(2, 5));
+        assertThat(status).isEqualTo(BallStatus.NOTHING);
     }
 }
